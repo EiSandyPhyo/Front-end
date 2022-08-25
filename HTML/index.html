@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="keywords" content="HTML,CSS Document">
+    <meta name="keywords" content="HTML,CSSDocument">
+    <meta name="author" content="EiSandy">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample HTML Document</title>
@@ -26,9 +27,16 @@
 
     <h2>&lt;&excl;-- Img Tag --&gt;</h2>
                 <!-- value -->
-    <img src="photos/onlinelearning.png" alt="Online Learning" width="50%" height="100%">
+    <img src="photos/onlinelearning.png" alt="Online Learning" width="50%" height="100%" title="OnlineLearning">
     <!-- property -->
     <br>
+
+    <h2>&lt;&excl;-- Video Tag --&gt;</h2>
+    <video src="https://bit.ly/3pGmUPp" width="50%" height="50%" controls></video><br>
+
+    <h2>&lt;&excl;-- iframe --&gt;</h2>
+    <!-- <embed src="" type=""> -->
+    <iframe width="50%" height="50%" src="https://www.youtube.com/embed/ZxKM3DCV2kE" title="Web Development Full Course - 22 Hour Course | Learn Full Stack Web Development From Scratch" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     <center><h2>&lt;&excl;-- A Href Tag --&gt;</h2></center>
     <a href="https://www.google.com" target="_blank"><center>GO To <mark>Google</mark></center></a>
@@ -39,26 +47,36 @@
     <h2>&lt;&excl;-- HTML Table --&gt;</h2>
     <table>
         <caption><h4> Student Info </h4></caption>
-        <tr>
+        <thead>
+            <tr>
             <td>Name</td>
             <td>Gender</td>
             <td>Age</td>
             <td colspan="2">Ph No</td>
         </tr>
-        <tr>
-            <td>Aung</td>
-            <td>Female</td>
-            <td>22</td>
-            <td>0945678656</td>
-            <td>0945644656</td>
-        </tr>
-        <tr>
-            <td>Mya Mya</td>
-            <td>Male</td>
-            <td>20</td>
-            <td>0945673556</td>
-            <td>0945645656</td>
-        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Aung</td>
+                <td>Female</td>
+                <td>22</td>
+                <td>0945678656</td>
+                <td>0945644656</td>
+            </tr>
+            <tr>
+                <td>Mya Mya</td>
+                <td rowspan="2">Male</td>
+                <td>20</td>
+                <td>0945673556</td>
+                <td>0945645656</td>
+            </tr>
+            <tr>
+                <td>Hnin Hnin</td>
+                <td>21</td>
+                <td>0943673556</td>
+                <td>0945647656</td>
+            </tr>
+        </tbody>
     </table>
     <br>
 
@@ -94,37 +112,54 @@
     <br>
 
     <!-- HTML Forms -->
+    <!-- http://127.0.0.1:5500/submit?eisandy=eisandy&eisandy=eisandy%40gmail.com&ygn=mdy -->
     <h2>&lt;&excl;-- HTML Forms --&gt;</h2>
-    <form action="">
-        <label for="name">Full Name: </label>
-        <input type="text" placeholder="Enter your name" id="name" autofocus><br>
-        <label for="email">Email: </label>
-        <input type="email" placeholder="Enter your email" id="email"><br>
-        <label for="password">Password: </label>
-        <input type="password" placeholder="Enter your password" id="password"><br>
-        <label for="no">Ph Number: </label>
-        <input type="number" placeholder="Enter your PhNo." id="no"><br>
-        <label for="color">Color: </label>
-        <input type="color" id="color"><br>
-        <label for="date">Date: </label>
-        <input type="datetime-local" id="date"><br>
-        <label for="file">File: </label>
-        <input type="file" id="file"><br>
-        <label for="file">Select City: </label>
-        <select name="ygn">
-            <option value="mdy">Mandalay</option>
-            <option value="ygn">Yangon</option>
-            <option value="pku">Pakokku</option>
-        </select><br>
-        <label for="checkbox">Checkbox: </label>
-        <input type="checkbox" value="checkbox" id="checkbox">AA
-        <input type="checkbox" value="checkbox" id="checkbox">BB
-        <input type="checkbox" value="checkbox" id="checkbox">CC<br>
-        <label for="radiobutton">RadioButton: </label>
-        <input type="radio" value="radiobutton" id="radiobutton">AA
-        <input type="radio" value="radiobutton" id="radiobutton">BB
-        <input type="radio" value="radiobutton" id="radiobutton">CC<br>
-        <input type="submit" value="submit">
+    <form method="GET" action="/submit">
+        <fieldset>
+            <legend>HTML Form</legend>
+            <label for="name">Full Name: </label>
+            <input type="text" name="eisandy" placeholder="Enter your name" id="name" autofocus required><br>
+            <label for="email">Email: </label>
+            <input type="email" name="eisandy" placeholder="Enter your email" id="email" required><br>
+            <label for="password">Password: </label>
+            <input type="password" placeholder="Enter your password" id="password"><br>
+            <label for="no">Ph Number: </label>
+            <input type="number" placeholder="Enter your PhNo." id="no"><br>
+            <label for="color">Color: </label>
+            <input type="color" id="color"><br>
+            <label for="date">Date: </label>
+            <input type="date" id="date"><br>
+            <label for="file">File: </label>
+            <input type="file" id="file"><br>
+            <label for="city">Select City: </label>
+            <select name="city" id="city">
+                <option value="mdy">Mandalay</option>
+                <option value="ygn">Yangon</option>
+                <option value="pku">Pakokku</option>
+            </select><br>
+            <label for="tsp">Select Township: </label>
+            <select name="" id="">
+                <optgroup label="Yangon">
+                    <option value="hty">HlaingTharyar</option>
+                    <option value="is">Insein</option>
+                </optgroup>
+                <optgroup label="Mandalay">
+                    <option value="act1">AungChanTharI</option>
+                    <option value="act2">AungChanTharII</option>
+                </optgroup>
+            </select><br>
+            <label for="checkbox">Checkbox: </label>
+            <input type="checkbox" name="cb" value="checkbox" id="checkbox">AA
+            <input type="checkbox" name="cb" value="checkbox" id="checkbox">BB
+            <input type="checkbox" name="cb" value="checkbox" id="checkbox">CC<br>
+            <label for="radiobutton">RadioButton: </label>
+            <input type="radio" name="radio" value="radiobutton" id="radiobutton">AA
+            <input type="radio" name="radio" value="radiobutton" id="radiobutton">BB
+            <input type="radio" name="radio" value="radiobutton" id="radiobutton">CC<br>
+            <label for="textarea">TextArea: </label><br>
+            <textarea name="textarea" id="textarea" cols="15" rows="4"></textarea><br>
+            <input type="submit" value="Submit">
+        </fieldset>
     </form>
     <br>
     <br>
