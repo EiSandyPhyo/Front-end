@@ -1,0 +1,17 @@
+table{
+    width: 100%;
+}
+table,tr,th,td{
+    border: 1px solid orangered;
+    border-collapse: collapse; /* table borders should collapse into a single border */
+    text-align: center;
+}
+ul{
+    list-style-type: circle;
+}
+h2{
+    color: brown;
+}
+.h2{
+    color: black;
+}
